@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+  SHOPPING CART PAGE - cart.html
+  Purpose: Shows products saved in the cart, quantity controls, item subtotal,
+  total item count, total price, clear cart button and checkout button.
+-->
+<html lang="en">
+<head>
+  <!-- Basic page information and responsive setup. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Toy Haven online toy shop">
+
+  <title>Toy Haven | Cart</title>
+
+  <!-- Favicon, PWA settings and CSS design file. -->
+  <link rel="icon" href="icons/icon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Shared top navigation. -->
+  <header class="header">
+    <a class="logo" href="index.html">TOY HAVEN</a>
+    <button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button>
+
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </header>
+
+  <!-- Main cart content. -->
+  <main class="section">
+    <h1>Shopping Cart</h1>
+
+    <!-- Two-column layout on larger screens: cart items + cart summary. -->
+    <div class="cart-layout">
+      <!-- JavaScript creates the saved cart product rows inside this div. -->
+      <div id="cartItems"></div>
+
+      <!-- Summary box shown on the right on desktop and below on smaller screens. -->
+      <aside class="summary">
+        <h2>Cart Summary</h2>
+
+        <!-- JavaScript updates this number after products or quantities change. -->
+        <p>Total items: <span id="totalItems">0</span></p>
+
+        <!-- JavaScript calculates and writes the final cart total here. -->
+        <p class="total">Total: $<span id="cartTotal">0.00</span></p>
+
+        <!-- Goes to the checkout page. -->
+        <a class="button block" href="checkout.html">Proceed to Checkout</a>
+
+        <!-- JavaScript asks for confirmation and then clears localStorage cart data. -->
+        <button id="clearCart" class="button light block">Clear Cart</button>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Shared footer. -->
+  <footer>
+    <p>© 2026 Toy Haven</p>
+
+    <div>
+      <a href="index.html">Home</a> |
+      <a href="products.html">Products</a> |
+      <a href="support.html">Support</a>
+    </div>
+
+    <form id="newsletterForm">
+      <label for="newsletterEmail">Newsletter</label>
+      <input id="newsletterEmail" type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <p id="newsletterMessage"></p>
+  </footer>
+
+  <!-- Product data first, main functionality second. -->
+  <script src="js/products.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

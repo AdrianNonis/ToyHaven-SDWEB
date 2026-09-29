@@ -1,0 +1,61 @@
+TOY HAVEN - CODE COMMENTS GUIDE
+================================
+
+This version of the project has educational comments added throughout the HTML,
+CSS and JavaScript files. The comments explain:
+- what each main block does,
+- why it is needed,
+- where the result appears on the running website,
+- and how important beginner JavaScript commands are being used.
+
+IMPORTANT ABOUT manifest.json
+-----------------------------
+The manifest.json file intentionally DOES NOT contain comments.
+Standard JSON does not allow comments. Adding // or /* */ comments inside
+manifest.json could make the PWA manifest invalid.
+
+What each manifest.json setting means:
+- "name": Full PWA/app name.
+- "short_name": Shorter name that can be used by the device.
+- "start_url": First page opened when the PWA starts.
+- "display": "standalone" makes an installed PWA feel more like an app.
+- "background_color": Background colour used by the PWA.
+- "theme_color": Main browser/app theme colour.
+- "icons": Tells the PWA where its application icon is stored.
+
+FILES TO STUDY FOR THE VIVA
+---------------------------
+1. index.html       - Home page structure
+2. products.html    - Product listing, search/filter and modal HTML
+3. cart.html        - Shopping cart structure
+4. checkout.html    - Form and order summary structure
+5. wishlist.html    - Wishlist and status filter structure
+6. support.html     - Feedback form and FAQ structure
+7. css/style.css    - Design and responsive layouts
+8. js/products.js   - Product data array/objects
+9. js/script.js     - Main website functionality
+10. sw.js           - Basic service worker for the PWA requirement
+11. manifest.json   - PWA configuration (valid JSON, so no comments inside)
+
+TIP
+---
+HTML comments use: <!-- comment -->
+CSS comments use:  /* comment */
+JavaScript comments use: // comment   or   /* comment */
+JSON normally does not support comments.
+
+
+============================================================
+COLOURFUL DESIGN UPDATE
+============================================================
+The website design was updated using only simple CSS and a small beginner-friendly
+JavaScript fade effect. The main logic of the cart, wishlist, checkout, filters,
+feedback and localStorage was not changed.
+
+Hero banner images now use the user's own files:
+- images/DR doom figurine 2.jpg
+- images/board game 2.jpg
+- images/remort control car.jpg
+
+The hero still changes every 4 seconds. The new fade uses CSS opacity plus a small
+setTimeout() in script.js. Comments beside the code explain how it works.

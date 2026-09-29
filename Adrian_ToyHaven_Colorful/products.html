@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+  PRODUCTS PAGE - products.html
+  Purpose: Displays all products and allows the user to search, filter, add to cart,
+  add to wishlist and view more product details.
+-->
+<html lang="en">
+<head>
+  <!-- Basic page setup and responsive settings. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Toy Haven online toy shop">
+
+  <title>Toy Haven | Products</title>
+
+  <!-- Browser icon, PWA file and main CSS file. -->
+  <link rel="icon" href="icons/icon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Shared header shown at the top of the page. -->
+  <header class="header">
+    <a class="logo" href="index.html">TOY HAVEN</a>
+
+    <!-- Opens the navigation menu on smaller screens. -->
+    <button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button>
+
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </header>
+
+  <!-- Main Products page content. -->
+  <main class="section">
+    <h1>Our Products</h1>
+    <p>Search or choose a category to find a product.</p>
+
+    <!--
+      SEARCH AND CATEGORY FILTER
+      JavaScript reads these values and decides which product cards should be shown.
+    -->
+    <div class="controls">
+      <!-- Search box: typing here triggers the product search function. -->
+      <input id="searchInput" type="search" placeholder="Search product name">
+
+      <!-- Category dropdown: changing this filters products by category. -->
+      <select id="categorySelect">
+        <option value="All">All Categories</option>
+        <option>Figurines</option>
+        <option>Toys</option>
+        <option>Board Games</option>
+        <option>Diecast Cars</option>
+      </select>
+    </div>
+
+    <!-- JavaScript creates and inserts all matching product cards inside this div. -->
+    <div id="productGrid" class="product-grid"></div>
+
+    <!-- JavaScript shows "No products found" here if the search/filter has no result. -->
+    <p id="noProducts" class="message"></p>
+  </main>
+
+  <!--
+    PRODUCT DETAILS MODAL / POPUP
+    Hidden by CSS at first.
+    JavaScript shows it when the user clicks the Details button on a product card.
+  -->
+  <div id="productModal" class="modal">
+    <div class="modal-box">
+      <!-- Closes the popup when clicked. -->
+      <button id="closeModal" class="close">X</button>
+
+      <!-- JavaScript inserts the selected product image, name, description and price here. -->
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Shared footer and newsletter form. -->
+  <footer>
+    <p>© 2026 Toy Haven</p>
+
+    <div>
+      <a href="index.html">Home</a> |
+      <a href="products.html">Products</a> |
+      <a href="support.html">Support</a>
+    </div>
+
+    <form id="newsletterForm">
+      <label for="newsletterEmail">Newsletter</label>
+      <input id="newsletterEmail" type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <p id="newsletterMessage"></p>
+  </footer>
+
+  <!-- Product data loads first, then the main JavaScript uses that data. -->
+  <script src="js/products.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
